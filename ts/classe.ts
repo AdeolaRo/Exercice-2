@@ -15,12 +15,12 @@ export class OrderManager{
         this.orders.push(order);
     }
        
-    findOrderById(id: number) {
+    findOrderById(id: number): Order | undefined {
         return this.orders.find(order => order.id === id);
     }
 
     listOrdersByStatus(status: 'en attente' | 'expédiée' | 'livrée'): Order[] {
-        return this.orders.filter(order => order.status);
+        return this.orders.filter(order => order.status === status);
     }
 
 
